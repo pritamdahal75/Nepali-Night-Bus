@@ -1,0 +1,1071 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #080b12;
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   FULL SCREEN VIDEO BACKGROUND
+========================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    z-index: -2;
+}
+
+.background-video {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    left: 0;
+    top: 0;
+}
+
+.background-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.55)
+        );
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: min(1100px, 92%);
+
+    margin: auto;
+
+    padding: 35px 0 25px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 45px;
+}
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.logo-icon {
+    font-size: 35px;
+}
+
+.logo h1 {
+    font-size: 18px;
+
+    letter-spacing: 3px;
+}
+
+.logo p {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    opacity: .5;
+}
+
+.status {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    opacity: .8;
+
+    padding: 9px 14px;
+
+    border-radius: 30px;
+
+    background: rgba(0, 0, 0, .25);
+
+    backdrop-filter: blur(2px);
+
+    border: 1px solid rgba(255,255,255,.1);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    background: #55e6a5;
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 12px #55e6a5;
+}
+
+
+/* =========================
+   JOURNEY
+========================= */
+
+.journey {
+    display: grid;
+
+    grid-template-columns: 160px 1fr 160px;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 45px;
+}
+
+.location {
+    padding: 10px;
+
+    border-radius: 8px;
+
+    background: rgba(0,0,0,.20);
+
+    backdrop-filter: blur(5px);
+}
+
+.location span {
+    display: block;
+
+    font-size: 12px;
+
+    opacity: .6;
+
+    letter-spacing: 2px;
+}
+
+.location strong {
+    font-size: 18px;
+
+    letter-spacing: 1px;
+}
+
+.destination {
+    text-align: right;
+}
+
+.route {
+    position: relative;
+
+    text-align: center;
+}
+
+.route-line {
+    height: 2px;
+
+    background: rgba(255,255,255,.3);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.moving-light {
+    position: absolute;
+
+    width: 80px;
+
+    height: 2px;
+
+    background: white;
+
+    animation: road 3s linear infinite;
+
+    box-shadow: 0 0 10px white;
+}
+
+@keyframes road {
+
+    from {
+        left: -80px;
+    }
+
+    to {
+        left: 100%;
+    }
+
+}
+
+.bus {
+    font-size: 28px;
+
+    margin-top: -18px;
+
+    position: relative;
+
+    filter: drop-shadow(
+        0 0 8px rgba(255,255,255,.3)
+    );
+}
+
+.route small {
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    opacity: .5;
+}
+
+
+/* =========================
+   PLAYER SECTION
+========================= */
+
+.player-section {
+    display: grid;
+
+    grid-template-columns: 360px 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+
+    margin-bottom: 70px;
+}
+
+
+/* =========================
+   ALBUM / STATIC IMAGE
+========================= */
+
+.album-image {
+    height: 360px;
+
+    border-radius: 5px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #080b12;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.6);
+
+    border: 1px solid rgba(255,255,255,.1);
+}
+
+
+/* Static image */
+
+.album-image-photo {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    z-index: 1;
+}
+
+
+/* Dark overlay */
+
+.image-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.05),
+            rgba(0,0,0,.65)
+        );
+
+    z-index: 2;
+}
+
+
+/* Album text */
+
+.album-text {
+    position: absolute;
+      border-radius: 10px;
+    top: 35px;
+
+    left: 35px;
+
+    z-index: 3;
+
+    text-shadow:
+        0 3px 15px rgba(0,0,0,.5);
+}
+
+.album-text span {
+    display: block;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    opacity: .8;
+
+    margin-bottom: 12px;
+}
+
+.album-text strong {
+    font-size: 50px;
+
+    line-height: .9;
+
+    letter-spacing: -3px;
+}
+
+
+/* Journey information */
+
+.journey-info {
+    margin-top: 15px;
+}
+
+.journey-info span {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    opacity: .5;
+}
+
+.journey-info p {
+    margin-top: 5px;
+
+    font-size: 13px;
+
+    opacity: .8;
+}
+
+
+/* =========================
+   PLAYER
+========================= */
+
+.player {
+    padding: 30px;
+
+    border-radius: 12px;
+
+    background: rgba(0,0,0,.25);
+
+    backdrop-filter: blur(2px);
+      border-radius: 18px;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.25);
+}
+
+.now-playing span {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    opacity: .5;
+}
+
+.now-playing h2 {
+    font-size: 34px;
+
+    margin-top: 10px;
+
+    letter-spacing: -1px;
+}
+
+.now-playing p {
+    margin-top: 6px;
+
+    opacity: .6;
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-container {
+    display: grid;
+
+    grid-template-columns: 40px 1fr 40px;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 35px;
+}
+
+.progress-container span {
+    font-size: 10px;
+
+    opacity: .5;
+}
+
+input[type="range"] {
+    width: 100%;
+
+    accent-color: white;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   CONTROLS
+========================= */
+
+.controls {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin-top: 25px;
+}
+
+button {
+    border: none;
+
+    color: white;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.control-btn {
+    font-size: 22px;
+
+    opacity: .7;
+
+    transition: .2s;
+}
+
+.control-btn:hover {
+    opacity: 1;
+
+    transform: scale(1.15);
+}
+
+.play-btn {
+    width: 62px;
+
+    height: 62px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #090b11;
+
+    font-size: 22px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transition: .2s;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.3);
+}
+
+.play-btn:hover {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   BUS HORN
+   POSITIONED NEAR STEERING
+========================= */
+
+.horn-section {
+
+    position: fixed;
+
+    /*
+       Position near the driver's
+       steering wheel.
+    */
+
+    right: 17%;
+
+    bottom: 13%;
+
+    z-index: 20;
+
+    width: auto;
+
+    margin: 0;
+
+    padding: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+
+    backdrop-filter: none;
+}
+
+
+/* Hide unnecessary horn information */
+
+.horn-info {
+    display: none;
+}
+
+
+/* =========================
+   HORN BUTTON
+========================= */
+
+.horn-btn {
+
+    width: 72px;
+
+    height: 72px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 3px;
+
+    border: 1px solid rgba(255,255,255,.2);
+
+    background: rgba(10,10,10,.65);
+
+    backdrop-filter: blur(8px);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition:
+        transform .15s ease,
+        background .15s ease,
+        box-shadow .15s ease;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.5);
+}
+
+
+/* Horn icon */
+
+.horn-icon {
+
+    font-size: 25px;
+
+    line-height: 1;
+}
+
+
+/* HORN text */
+
+.horn-text {
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    opacity: .8;
+}
+
+
+/* =========================
+   HORN HOVER
+========================= */
+
+.horn-btn:hover {
+
+    transform: scale(1.08);
+
+    background: rgba(255,255,255,.12);
+
+    box-shadow:
+        0 0 25px rgba(255,255,255,.25);
+}
+
+
+/* =========================
+   HORN PRESS
+========================= */
+
+.horn-btn:active {
+
+    transform: scale(.94);
+
+}
+
+
+/* =========================
+   HORN ACTIVE / HONKING
+========================= */
+
+.horn-btn.honking {
+
+    animation: hornShake .08s infinite alternate;
+
+    background: rgba(255,255,255,.18);
+
+    box-shadow:
+        0 0 30px rgba(255,255,255,.5);
+}
+
+
+@keyframes hornShake {
+
+    from {
+        transform: rotate(-90deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+
+}
+
+
+/* =========================
+   VOLUME
+========================= */
+
+.volume {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.volume input {
+
+    max-width: 120px;
+}
+
+
+/* =========================
+   PLAYLIST
+========================= */
+
+.playlist-section {
+
+    max-width: 800px;
+
+    margin: auto;
+
+  
+    padding: 25px;
+
+    border-radius: 12px;
+
+    background: rgba(0,0,0,.25);
+
+    backdrop-filter: blur(2px);
+
+    border: 1px solid rgba(255,255,255,.1);
+}
+
+.playlist-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 20px;
+}
+
+.playlist-header span {
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    opacity: .5;
+}
+
+.playlist-header h2 {
+
+    margin-top: 6px;
+
+    font-size: 20px;
+}
+
+
+/* Playlist */
+
+.playlist {
+
+    border-top:
+        1px solid rgba(255,255,255,.15);
+}
+
+
+/* Individual song */
+
+.song {
+
+    display: grid;
+
+    grid-template-columns: 40px 1fr auto;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 17px 10px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+
+    cursor: pointer;
+
+    transition: .2s;
+
+    border-radius: 5px;
+}
+
+.song:hover {
+
+    background:
+        rgba(255,255,255,.08);
+
+    padding-left: 18px;
+}
+
+.song.active {
+
+    background:
+        rgba(255,255,255,.12);
+
+    box-shadow:
+        inset 3px 0 0 white;
+}
+
+.song-number {
+
+    font-size: 11px;
+
+    opacity: .4;
+}
+
+.song-title {
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.song-artist {
+
+    font-size: 11px;
+
+    opacity: .5;
+
+    margin-top: 4px;
+}
+
+.song-duration {
+
+    font-size: 10px;
+
+    opacity: .5;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 60px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    opacity: .4;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .horn-section {
+
+        right: 10%;
+
+        bottom: 12%;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .journey {
+
+        grid-template-columns:
+            100px
+            1fr
+            100px;
+    }
+
+    .player-section {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .album-image {
+
+        height: 300px;
+    }
+
+    .player {
+
+        padding: 25px;
+    }
+
+    /* Move horn slightly away from
+       the edge on tablets */
+
+    .horn-section {
+
+        right: 8%;
+
+        bottom: 10%;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .container {
+
+        padding-top: 20px;
+    }
+
+    header {
+
+        margin-bottom: 30px;
+    }
+
+    .logo-icon {
+
+        font-size: 28px;
+    }
+
+    .logo h1 {
+
+        font-size: 15px;
+    }
+
+    .status {
+
+        font-size: 8px;
+
+        padding: 7px 9px;
+    }
+
+    .journey {
+
+        grid-template-columns:
+            80px
+            1fr
+            80px;
+    }
+
+    .location strong {
+
+        font-size: 12px;
+    }
+
+    .location span {
+
+        font-size: 9px;
+    }
+
+    .now-playing h2 {
+
+        font-size: 26px;
+    }
+
+    .album-image {
+
+        height: 260px;
+    }
+
+    .album-text {
+
+        top: 25px;
+
+        left: 25px;
+    }
+
+    .album-text strong {
+
+        font-size: 40px;
+    }
+
+    .playlist-section {
+
+        padding: 18px;
+    }
+
+    .playlist-header h2 {
+
+        font-size: 16px;
+    }
+
+    .song {
+
+        grid-template-columns:
+            30px
+            1fr
+            auto;
+    }
+
+    footer {
+
+        flex-wrap: wrap;
+
+        text-align: center;
+
+        line-height: 2;
+    }
+
+
+    /* Mobile horn */
+
+    .horn-section {
+
+        right: 6%;
+
+        bottom: 8%;
+    }
+
+    .horn-btn {
+
+        width: 62px;
+
+        height: 62px;
+    }
+
+    .horn-icon {
+
+        font-size: 21px;
+    }
+
+    .horn-text {
+
+        font-size: 7px;
+    }
+
+}

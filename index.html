@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Nepal Night Bus</title>
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+
+    <!-- Google Font -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         FULL SCREEN VIDEO BACKGROUND
+    ================================== -->
+
+    <div class="background">
+
+        <video
+            class="background-video"
+            autoplay
+            muted
+            loop
+            playsinline
+        >
+
+            <source
+                src="videos/bus-moving.mp4"
+                type="video/mp4"
+            >
+
+            Your browser does not support the video tag.
+
+        </video>
+
+
+        <!-- Dark overlay -->
+
+        <div class="background-overlay"></div>
+
+    </div>
+
+
+
+    <!-- =================================
+         MAIN CONTAINER
+    ================================== -->
+
+    <main class="container">
+
+
+        <!-- =================================
+             HEADER
+        ================================== -->
+
+        <header>
+
+
+            <!-- Logo -->
+
+            <div class="logo">
+
+                <span class="logo-icon">
+                    🚌
+                </span>
+
+
+                <div>
+
+                    <h1>
+                        NIGHT BUS
+                    </h1>
+
+                    <p>
+                        NEPAL
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Status -->
+
+            <div class="status">
+
+                <span class="status-dot"></span>
+
+                ON THE ROAD
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================
+             JOURNEY / ROUTE
+        ================================== -->
+
+        <section class="journey">
+
+
+            <!-- Starting location -->
+
+            <div class="location">
+
+                <span>
+                    KTM
+                </span>
+
+                <strong>
+                    KATHMANDU
+                </strong>
+
+            </div>
+
+
+
+            <!-- Route -->
+
+            <div class="route">
+
+                <div class="route-line">
+
+                    <div class="moving-light"></div>
+
+                </div>
+
+
+                <div class="bus">
+                    🚌
+                </div>
+
+
+                <small>
+                    207 KM
+                </small>
+
+            </div>
+
+
+
+            <!-- Destination -->
+
+            <div class="location destination">
+
+                <span>
+                    PKR
+                </span>
+
+                <strong>
+                    POKHARA
+                </strong>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             MAIN PLAYER SECTION
+        ================================== -->
+
+        <section class="player-section">
+
+
+            <!-- =================================
+                 ALBUM / IMAGE
+            ================================== -->
+
+            <div class="album">
+
+
+                <div class="album-image">
+
+
+                    <!-- Static image -->
+
+                    <img
+                        src="images/night-bus.png"
+                        alt="Nepal Night Bus"
+                        class="album-image-photo"
+                    >
+
+
+                    <!-- Image dark overlay -->
+
+                    <div class="image-overlay"></div>
+
+
+                    <!-- Image text -->
+
+                    <div class="album-text">
+
+                        <span>
+                            NEPAL
+                        </span>
+
+
+                        <strong>
+                            NIGHT<br>
+                            BUS
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- Journey information -->
+
+                <div class="journey-info">
+
+                    <span>
+                        TONIGHT'S JOURNEY
+                    </span>
+
+
+                    <p>
+                        Kathmandu → Pokhara
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 MUSIC PLAYER
+            ================================== -->
+
+            <div class="player">
+
+
+                <!-- Current song -->
+
+                <div class="now-playing">
+
+
+                    <span>
+                        NOW PLAYING
+                    </span>
+
+
+                    <h2 id="songTitle">
+                        Loading...
+                    </h2>
+
+
+                    <p id="artistName">
+                        Artist
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     PROGRESS BAR
+                ================================== -->
+
+                <div class="progress-container">
+
+
+                    <span id="currentTime">
+                        0:00
+                    </span>
+
+
+                    <input
+                        type="range"
+                        id="progress"
+                        min="0"
+                        max="100"
+                        value="0"
+                    >
+
+
+                    <span id="duration">
+                        0:00
+                    </span>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     PLAYER CONTROLS
+                ================================== -->
+
+                <div class="controls">
+
+
+                    <!-- Previous -->
+
+                    <button
+                        id="previousBtn"
+                        class="control-btn"
+                        aria-label="Previous song"
+                    >
+
+                        ⏮
+
+                    </button>
+
+
+
+                    <!-- Play -->
+
+                    <button
+                        id="playBtn"
+                        class="play-btn"
+                        aria-label="Play or pause"
+                    >
+
+                        ▶
+
+                    </button>
+
+
+
+                    <!-- Next -->
+
+                    <button
+                        id="nextBtn"
+                        class="control-btn"
+                        aria-label="Next song"
+                    >
+
+                        ⏭
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     VOLUME
+                ================================== -->
+
+                <div class="volume">
+
+
+                    <span>
+                        🔊
+                    </span>
+
+
+                    <input
+                        type="range"
+                        id="volume"
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        value="0.8"
+                        aria-label="Volume"
+                    >
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+        <!-- =================================
+     BUS HORN
+================================== -->
+
+<div class="horn-section">
+
+    <button
+        id="hornBtn"
+        class="horn-btn"
+        aria-label="Bus horn"
+    >
+
+        <span class="horn-icon">📯</span>
+
+
+    </button>
+
+</div>
+
+
+
+        <!-- =================================
+             PLAYLIST
+        ================================== -->
+
+        <section class="playlist-section">
+
+
+            <!-- Playlist header -->
+
+            <div class="playlist-header">
+
+
+                <div>
+
+                    <span>
+                        TONIGHT'S PLAYLIST
+                    </span>
+
+
+                    <h2>
+                        Road Trip Selection
+                    </h2>
+
+                </div>
+
+
+                <span id="trackCount">
+                    5 TRACKS
+                </span>
+
+
+            </div>
+
+
+
+            <!-- Playlist songs will be inserted
+                 by JavaScript -->
+
+            <div
+                id="playlist"
+                class="playlist"
+            >
+
+                <!-- JavaScript creates songs here -->
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             FOOTER
+        ================================== -->
+
+        <footer>
+
+
+            <span>
+                EST. 2026
+            </span>
+
+
+            <span>
+                •
+            </span>
+
+
+            <span>
+                KATHMANDU — POKHARA
+            </span>
+
+
+            <span>
+                •
+            </span>
+
+
+            <span>
+                KEEP TRAVELLING 🇳🇵
+            </span>
+
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- =================================
+         AUDIO PLAYER
+    ================================== -->
+
+    <audio id="audio"></audio>
+
+
+
+    <!-- =================================
+         JAVASCRIPT
+    ================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
