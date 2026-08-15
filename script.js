@@ -43,7 +43,7 @@ const songs = [
         title: "Sailo Ma Charghare - Bishwo Dong",
         artist: "Bishwo Dong",
         file: "songs/Sailo Ma Charghare『Official Music Video』- Bishwo Dong  Ft. Alisha Rai  Bijay Dong  Sushil Waiba - Bishwo Dong.mp3",
-        duration: "11:41"
+        duration: "6:21"
     }
 
 ];
